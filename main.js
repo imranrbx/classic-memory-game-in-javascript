@@ -8,12 +8,12 @@ let timeout = null;
 function init() {
 	const randNums = shuffle([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
 	boxes.forEach((box, index) => {
-		box.innerText = randNums[index];
+		box.innerHTML = `<img src="./images/${randNums[index]}.png" />`;
 		setTimeout(() => {
-			box.innerText = "";
+			box.innerHTML = "";
 		}, 2000);
 		box.addEventListener("click", (el) => {
-			el.target.innerText = randNums[index];
+			el.target.innerHTML = `<img src="./images/${randNums[index]}.png" />`;
 			compare.push(randNums[index]);
 			indexes.push(index);
 			if (compare.length === 2) {
@@ -23,7 +23,7 @@ function init() {
 						boxes[item].setAttribute("disabled", "disabled")
 					);
 				} else {
-					indexes.forEach((item) => (boxes[item].innerText = ""));
+					indexes.forEach((item) => (boxes[item].innerHTML = ""));
 				}
 				compare = [];
 				indexes = [];

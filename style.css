@@ -46,8 +46,14 @@ body {
 	color: #fff;
 	font-size: 2rem;
 }
-.box[disabled="disabled"] {
+/* .box[disabled="disabled"] {
 	background: red;
+} */
+.box img {
+	width: auto;
+	height: 40px;
+	object-fit: contain;
+	line-height: 100px;
 }
 #reset {
 	grid-column-start: span 3;
